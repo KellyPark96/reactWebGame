@@ -9,12 +9,12 @@ const WordRelay = () => {
     const onSubmitForm = (e) => {
         e.preventDefault();
         if(word[word.length - 1] === value[0]) {
-            setResult('딩동댕');
+            setResult('딩동댕!!!');
             setWord(value);
             setValue('');
             inputEl.current.focus();
         }else {
-            setResult('땡');
+            setResult('땡!!!');
             setValue('');
             inputEl.current.focus();
         }
@@ -27,11 +27,14 @@ const WordRelay = () => {
         <>
             <div>{word}</div>
             <form onSubmit={onSubmitForm}> 
+            <label htmlFor="wordInput">글자를 입력하세요.</label>
                 <input
                     type="text"
-                    value={value}
                     ref={inputEl}
+                    value={value}
                     onChange={onChangeInput}
+                    id="wordInput"
+                    className="wordInput"
                 />
                 <button>입력!</button>
             </form>

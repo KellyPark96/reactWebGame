@@ -1,12 +1,12 @@
 {
-  "name": "word-relay",
+  "name": "number-basketball",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --env development"
   },
-  "author": "kellyPark",
+  "author": "kellypark",
   "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",

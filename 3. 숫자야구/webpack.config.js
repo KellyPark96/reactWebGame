@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// process.env.NODE_ENV = 'production';
 
 module.exports = {
     mode: 'development',
@@ -37,9 +38,6 @@ module.exports = {
         static: {
             directory: path.resolve(__dirname),
         },
-        // publicPath: '/dist/', // express.static과 비슷함.
-        // contentBase: '/dist/',
-        // compress: true,
         hot: true,
         port: 9000,
         // open: true,
