@@ -67,6 +67,8 @@ const NumberBaseball = () => {
             <ul>
                 {tries.map((v, i) => {
                     return (
+                        // 부모 컴포넌트가 리렌더되면 자식도 리렌더됨.
+                        // pureComponent
                         <Try key={`${i + 1}차 시도 :`} tryInfo={v} />
                     );
                 })}
