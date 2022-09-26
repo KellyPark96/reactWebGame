@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,23 +14,28 @@
         }
     </style>
 </head>
+
 <body>
     <div id="red"></div>
     <div id="blue"></div>
     <div id="green"></div>
     <script>
-        function reducer(state, action){
+        function reducer(state, action) {
             console.log(state, action);
-            if(state === undefined){ // 초기화 단계
-                return { color: 'yellow'}
+            if (state === undefined) { // 초기화 단계
+                return { color: 'yellow' }
             }
             let newState;
-            if(action.type === 'CHANGE_COLOR'){
-                newState = Object.assign({}, state, {color: action.color});
+            if (action.type === 'CHANGE_COLOR') {
+                newState = Object.assign({}, state, { color: action.color });
             }
+            console.log(action.type, action, state, newState);
             return newState;
         }
-        let store = Redux.createStore(reducer);
+        let store = Redux.createStore(
+            reducer, /* preloadedState, */
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        );
         console.log(store.getState());
 
         function red() {
